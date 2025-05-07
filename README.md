@@ -1,5 +1,4 @@
 # RiboMicrobe
-# RiboMicrobe
 
 ## Introduction
 sORFpredict and sORFpredict_Ribo are deep learning models designed for predicting bacterial sORFs. Two models are written in python 3 and uses the PyTorch library for deep learning purposes. Fine-tuned models are currently available for Escherichia coli, Bacillus subtilis, Staphylococcus aureus, and Salmonella enterica, which can be directly used for training. For other species, users can download the scripts and train custom models. It is recommended to use GPU-base infrastructure for training and using new models with sORFpredict and sORFpredict_Ribo.
