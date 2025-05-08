@@ -64,7 +64,7 @@ sORFpredict_Ribo is a deep learning model that includes components such as CNN, 
   <img src="https://github.com/user-attachments/assets/7ebea4ed-aaf4-493a-bdfd-e74e13f4203e" width="80%">
 </div>
 
-## Data Preparation:
+## Data Preparation
 The training dataset of sORFpredict_Ribo was derived from 19 species. For each species, sequence and coverage features of CDS regions were extracted from the reference genome, annotation file, and Ribo-seq BAM files, and then stored in a structured HDF5 file for downstream model pretraining.
 ```
 python ./Dataparse.py --species_dirs bsu clj cvi eco eli hsa hvo msm mtu pae sau sav scl sen sgr sli sve syn zmo --output ./pretrain_data.h5 --threads 4
@@ -97,7 +97,7 @@ python pretrain.py --h5_path path/to/pretrain_data.h5 --max_seq_len 1024 --batch
  --weight_decay   default=0.01
 --val_species_ratio    default=0.4
 ```
-## Fine-tuned Model：
+## Fine-tuned Model
 If a candidate ORF satisfies both the sequence and Ribo-seq signal criteria, it is classified as positive, forming a binary classification task. We primarily fine-tuned the model using data from Escherichia coli, Staphylococcus aureus, Bacillus subtilis, and Salmonella enterica.
 ```
 python ecoli_finetune.py –genome /path/to/genome.dna.fa --annotation /path/to/annotation.gtf --ribo_bam /path/to/sample.bam --pretrained best_model.pt --output_h5 /path/to/species.h5 --output_dir /path/to/output --max_seq_len 1024 --batch_size 32 --lr 1e-4
@@ -114,7 +114,7 @@ python ecoli_finetune.py –genome /path/to/genome.dna.fa --annotation /path/to/
 --patience   help='Number of epochs to wait before early stopping'
 ```
 
-## Prediction Model：
+## Prediction Model
 ```
 python predict.py --model best_model.pth --fasta /path/to/genome.dna.fa –bam /path/to/sample.bam --output ./predictions.csv --max_len 1024
 --model   help='Path to trained model
