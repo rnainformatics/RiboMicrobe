@@ -20,6 +20,18 @@ PyTorch
 samtools
 ```
 Install PyTorch from https://pytorch.org, ensuring compatibility with your system's hardware. This package has been developed and tested with PyTorch ≥ 1.8.
+You can also use the provided Conda environment file to set up the environment easily:
+1.Download the **environment.yml** file from this repository to your local machine.
+2.Create the environment using the following command:
+```
+conda env create -f environment.yml
+```
+3.Activate the environment:
+```
+conda activate sORFpredict
+```
+This ensures all necessary dependencies are installed with compatible versions.
+
 ## sORFpredict
 sORFpredict applies convolutional neural networks (CNNs) and a Transformer architecture for deep learning.
 <div align="center">
