@@ -22,7 +22,7 @@ samtools
 Install PyTorch from https://pytorch.org, ensuring compatibility with your system's hardware. This package has been developed and tested with PyTorch ≥ 1.8.
 ## sORFpredict
 sORFpredict applies convolutional neural networks (CNNs) and a Transformer architecture for deep learning.
-![image](https://github.com/user-attachments/assets/e52a5f8c-1d05-42e7-a78b-2b83f0c46aeb)
+![image](https://github.com/user-attachments/assets/ddd53a22-379e-4d6b-a5db-9581550b17e7)
 ## Data Preparation
 The training dataset for sORFpredict consists of initiation codon fragments from 36 bacterial species. Sequence fragments within a 50nt upstream and 20nt downstream range of the start codons (ATG, GTG, TTG) are extracted as the positive set, while sequences with the CTG start codon of the same length are used as the negative set. The data is shuffled and then divided into training, validation, and test sets.
 Training Model
@@ -41,7 +41,8 @@ python model_anno.py --fasta_file /path/to/test_data.fasta --model_path /path/to
 
 ## sORFpredict_Ribo
 sORFpredict_Ribo is a deep learning model that includes components such as CNN, Residual Blocks, Transformer encoder, and upsampling layers, combining sequence features and Ribo-seq signal features for prediction. 
-![image](https://github.com/user-attachments/assets/dc3bb1f9-c789-40fd-ab73-24ffe6c30d50)
+![image](https://github.com/user-attachments/assets/af0d9e16-c504-48ca-b2d2-4bae3389b212)
+
 
 ## Data Preparation:
 The training dataset of sORFpredict_Ribo was derived from 19 species. For each species, sequence and coverage features of CDS regions were extracted from the reference genome, annotation file, and Ribo-seq BAM files, and then stored in a structured HDF5 file for downstream model pretraining.
