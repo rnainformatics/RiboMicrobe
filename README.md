@@ -44,8 +44,10 @@ python model_anno.py --fasta_file /path/to/test_data.fasta --model_path /path/to
 
 ## sORFpredict_Ribo
 sORFpredict_Ribo is a deep learning model that includes components such as CNN, Residual Blocks, Transformer encoder, and upsampling layers, combining sequence features and Ribo-seq signal features for prediction. 
-![image](https://github.com/user-attachments/assets/af0d9e16-c504-48ca-b2d2-4bae3389b212)
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/7ebea4ed-aaf4-493a-bdfd-e74e13f4203e" width="80%">
+</div>
 
 ## Data Preparation:
 The training dataset of sORFpredict_Ribo was derived from 19 species. For each species, sequence and coverage features of CDS regions were extracted from the reference genome, annotation file, and Ribo-seq BAM files, and then stored in a structured HDF5 file for downstream model pretraining.
