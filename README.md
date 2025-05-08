@@ -23,7 +23,7 @@ Install PyTorch from https://pytorch.org, ensuring compatibility with your syste
 ## sORFpredict
 sORFpredict applies convolutional neural networks (CNNs) and a Transformer architecture for deep learning.
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/ddd53a22-379e-4d6b-a5db-9581550b17e7" width="300">
+  <img src="https://github.com/user-attachments/assets/ddd53a22-379e-4d6b-a5db-9581550b17e7" width="80%">
 </div>
 ## Data Preparation
 The training dataset for sORFpredict consists of initiation codon fragments from 36 bacterial species. Sequence fragments within a 50nt upstream and 20nt downstream range of the start codons (ATG, GTG, TTG) are extracted as the positive set, while sequences with the CTG start codon of the same length are used as the negative set. The data is shuffled and then divided into training, validation, and test sets.
