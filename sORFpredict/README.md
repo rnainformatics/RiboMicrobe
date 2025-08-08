@@ -34,7 +34,7 @@ Prepare your dataset (`dataset_anno.txt`) and run:
 ```
 python Training.py \
   --data_path /path/to/dataset_anno.txt \
-  --save_path /path/to/trans_model.pth \
+  --save_path /path/to/trans_best_model.pth \
   --batch_size 256 \
   --lr 0.01 \
   --epochs 100
@@ -45,7 +45,7 @@ python Training.py \
 Provide a FASTA file with candidate sequences and run:
 
 ```
-python model_anno.py \
+python model_predict.py \
   --fasta_file /path/to/test_data.fasta \
   --model_path /path/to/trans_model.pth
 ```
