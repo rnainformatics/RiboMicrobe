@@ -124,3 +124,114 @@ python predict.py --model best_model.pth --fasta /path/to/genome.dna.fa –bam /
 --max_len    default=1024, help='Max ORF length
 ```
 sORFpredict_Ribo generates two result files: one contains all prediction results, including both ORFs and non-ORFs; the other contains predicted sORFs with lengths less than 300 nucleotides.
+
+
+---
+
+```markdown
+# Web Analysis Tools
+
+> **Recommended:** Use our online platform: [RiboMicrobe Online Tool](https://rnainformatics.org.cn/RiboMicrobe/index.php)
+
+---
+
+## Online Tool Usage
+
+1. Visit the [RiboMicrobe website](https://rnainformatics.org.cn/RiboMicrobe/index.php)  
+2. Select the desired tool from the **Tools** menu  
+3. Upload your data or use the example dataset  
+4. Set analysis parameters  
+5. Submit the analysis job  
+6. View and download results  
+For more details, see the **Help** page on our website or contact us.
+
+## Local Installation
+
+We provide scripts for running Diffco and DiffTE locally, suitable for custom analysis workflows.
+---
+
+## Languages
+R
+
+## Required R Packages
+GenomicAlignments  
+GenomicFeatures  
+data.table  
+ggplot2  
+jsonlite  
+gridExtra  
+seqinr  
+cowplot  
+zoo  
+signal  
+parallel  
+plyr  
+Rsamtools  
+getopt  
+ggpubr  
+reshape2  
+dplyr  
+ggthemes  
+RColorBrewer  
+ComplexHeatmap  
+Cairo  
+circlize  
+ggplotify  
+
+---
+
+## DiffTE
+The DiffTE analysis applies the **TMM normalization** method from `edgeR` to separately normalize raw count data from Ribo-seq and RNA-seq, and then calculates **RPKM** (Reads Per Kilobase of transcript per Million mapped reads).  
+Translation efficiency (**TE**) is defined as:
+
+```
+
+TE = Ribo-seq RPKM / RNA-seq RPKM
+
+```
+
+We then perform differential analysis on the **log₂-transformed TE values** using the `limma` package for linear modeling and statistical testing to identify differentially translated genes.
+
+**Significance criteria:**  
+|log₂FC| ≥ 1.5 and unadjusted p-value < 0.05
+
+**RPKM calculation** can be found in `RPKM.r`.
+
+**Run command:**
+```
+
+Rscript diffTE.r -j <jobid> -s <species> -n <samplenames> -fc <foldchange> -p <pvalue>
+
+```
+
+---
+
+## DiffCo
+DiffCo compares codon occupancy patterns under different conditions.  
+Workflow:
+1. In-frame filtering of Ribo-seq reads in CDS regions  
+2. Remove the first and last 15 codons to avoid edge effects  
+3. Extract footprint coverage at A, P, and E sites, and downstream codons (+1 to +3)  
+4. Normalize using the average coverage of downstream sites  
+5. Convert trinucleotide codons to amino acids and aggregate occupancy values  
+6. Statistical testing using `limma` with empirical Bayes
+
+**Significance criteria:**  
+|log₂FC| ≥ 1.5 and p < 0.05
+
+**Step 1 – Calculate codon usage:**
+```
+
+Rscript usage\_codon.R -s <species>
+
+```
+`<species>` is a directory containing the required R input files.
+
+**Step 2 – Analyze differential codon occupancy:**
+```
+
+Rscript diffcodon\_occupancy.r -j <jobid> -s <species> -n <samplenames> -i <bia> -o \<offset\_position> -r <foldchange> -p <pvalue>
+
+```
+
+
