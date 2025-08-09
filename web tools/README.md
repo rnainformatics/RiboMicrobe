@@ -93,7 +93,7 @@ Rscript diffTE.r -j <jobid> -s \<species\_dir> -n <samplenames> -fc <foldchange>
 ### Step 1: Calculate Codon Usage
 ```
 
-Rscript usage\_codon.R -s \<species\_dir>
+Rscript usage_codon.R -s \<species\_dir>
 
 ```
 
