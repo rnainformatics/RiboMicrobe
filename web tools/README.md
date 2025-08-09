@@ -83,12 +83,6 @@ Rscript diffTE.r -j <jobid> -s \<species\_dir> -n <samplenames> -fc <foldchange>
 - Convert codon triplets to amino acid occupancy levels  
 - Perform statistical analysis using `limma` with empirical Bayes
 
-### Significance Criteria
-```
-
-|log₂FC| ≥ 1.5 and p-value < 0.05
-
-```
 
 ### Step 1: Calculate Codon Usage
 ```
