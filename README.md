@@ -159,8 +159,9 @@ Rscript diffcodon\_occupancy.r -j \$jobid -s \$species -n \$samplenames -i \$bia
 ```
 
 The workflow is shown in the figure below:
-<img width="532" height="840" alt="image" src="https://github.com/user-attachments/assets/3b9f4763-2bb2-4c48-a33a-e85a7b35832a" />
-
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3b9f4763-2bb2-4c48-a33a-e85a7b35832a" width="80%">
+</div>
 
 ## Online Tool Usage
 
