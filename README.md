@@ -45,7 +45,7 @@ sORFpredict applies convolutional neural networks (CNNs) and a Transformer archi
 The training dataset for sORFpredict consists of initiation codon fragments from 36 bacterial species. Sequence fragments within a 50nt upstream and 20nt downstream range of the start codons (ATG, GTG, TTG) are extracted as the positive set, while sequences with the CTG start codon of the same length are used as the negative set. The data is shuffled and then divided into training, validation, and test sets.
 Training Model
 ```
-Python Training.py --data_path /path/to/dataset_anno.txt --save_path /path/to/trans_model.pth --batch_size 256 --lr 0.01 --epochs 100
+Python Training.py --data_path /path/to/dataset_anno.txt --save_path /path/to/train_best_model.pth --batch_size 256 --lr 0.01 --epochs 100
 --data_path   help='Path to dataset txt file'
 --save_path   help='Path to save the model'
  --batch_size   default=256
@@ -54,7 +54,7 @@ Python Training.py --data_path /path/to/dataset_anno.txt --save_path /path/to/tr
 ```
 Prediction Model
 ```
-python model_anno.py --fasta_file /path/to/test_data.fasta --model_path /path/to/saved_model.pth
+python model_predict.py --fasta_file /path/to/test_data.fasta --model_path /path/to/train_best_model.pth 
 ```
 
 ## sORFpredict_Ribo
