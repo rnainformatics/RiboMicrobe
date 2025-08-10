@@ -129,7 +129,7 @@ sORFpredict_Ribo generates two result files: one contains all prediction results
 
 **Recommended:** Use our online platform: [RiboMicrobe Online Tool](https://rnainformatics.org.cn/RiboMicrobe/index.php)
 
-```
+
 ## DiffTE
 The DiffTE analysis uses the TMM normalization method implemented in edgeR to normalize the raw count data from Ribo-seq and RNA-seq separately, and then calculates the corresponding Reads Per Kilobase of transcript per Million mapped reads (RPKM). Translation efficiency (TE) is defined as the ratio of Ribo-seq RPKM to RNA-seq RPKM. We then performed differential analysis on the log₂-transformed TE values using the limma package for linear modeling and statistical testing, in order to identify differentially translated genes. A threshold of |log₂FC| ≥ 1.5 and unadjusted p-value < 0.05 was used.  
 The method to calculate RPKM can be referenced in the `RPKM.r` script.  
