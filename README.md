@@ -131,7 +131,7 @@ sORFpredict_Ribo generates two result files: one contains all prediction results
 ```markdown
 # Web Analysis Tools
 
-> **Recommended:** Use our online platform: [RiboMicrobe Online Tool](https://rnainformatics.org.cn/RiboMicrobe/index.php)
+**Recommended:** Use our online platform: [RiboMicrobe Online Tool](https://rnainformatics.org.cn/RiboMicrobe/index.php)
 
 ---
 
