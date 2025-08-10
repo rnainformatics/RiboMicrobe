@@ -125,7 +125,7 @@ python predict.py --model best_model.pth --fasta /path/to/genome.dna.fa –bam /
 ```
 sORFpredict_Ribo generates two result files: one contains all prediction results, including both ORFs and non-ORFs; the other contains predicted sORFs with lengths less than 300 nucleotides.
 
-# Web Analysis Tools
+## Web Analysis Tools
 
 **Recommended:** Use our online platform: [RiboMicrobe Online Tool](https://rnainformatics.org.cn/RiboMicrobe/index.php)
 
