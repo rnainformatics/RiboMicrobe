@@ -127,15 +127,13 @@ sORFpredict_Ribo generates two result files: one contains all prediction results
 
 ## Web Analysis Tools
 
+**Recommended:** Use our online platform: [RiboMicrobe Online Tool](https://rnainformatics.org.cn/RiboMicrobe/index.php)
 Our website provides two online analysis tools, DiffTE and DiffCo, which are summarized as follows:
 
 ### DiffTE
 The DiffTE analysis uses the TMM normalization method implemented in edgeR to normalize the raw count data from Ribo-seq and RNA-seq separately, and then calculates the corresponding Reads Per Kilobase of transcript per Million mapped reads (RPKM). Translation efficiency (TE) is defined as the ratio of Ribo-seq RPKM to RNA-seq RPKM. We then performed differential analysis on the log₂-transformed TE values using the limma package for linear modeling and statistical testing, in order to identify differentially translated genes. A threshold of |log₂FC| ≥ 1.5 and unadjusted p-value < 0.05 was used.
 ### DiffCo
 DiffCo is designed to compare codon occupancy patterns under different conditions. We developed custom R scripts to analyze Ribo-seq data and evaluate ribosome pausing preferences at the codon level. The workflow is as follows: First, we performed in-frame filtering of Ribo-seq reads in CDS regions, excluding the first and last 15 codons to avoid edge effects. We then extracted footprint coverage at the A, P, and E sites, as well as downstream codons (+1 to +3), and normalized all codon signals using the average coverage of downstream sites to eliminate expression-level bias. The trinucleotide sequences were then translated into amino acids, and codon-level occupancy values were aggregated and standardized. Finally, we applied limma for linear modeling and used the empirical Bayes method to assess statistical significance. Codons with |log₂FC| ≥ 1.5 and p < 0.05 were considered significantly differentially occupied.
-
-
-**Recommended:** Use our online platform: [RiboMicrobe Online Tool](https://rnainformatics.org.cn/RiboMicrobe/index.php)
 
 ## Online Tool Usage
 1. Visit the [RiboMicrobe website](https://rnainformatics.org.cn/RiboMicrobe/index.php)  
